@@ -4,23 +4,16 @@ You will extractall the numbers in the file and compute the sum of the numbers.
 '''
 import re
 
-fname = raw_input('Enter File name :')
-
+fname = ('regex_sum_42.txt')
+#fname = ('regex_sum_1683143.txt')
 handle = open(fname)
-
 sum=0
-
 count = 0
-
 for line in handle:
-	
 	f = re.findall('[0-9]+',line)
-	
 	for num in f:
+		if num >= [0]:			
+			count += 1
+			sum += int(num)
 		
-		if num >= [0]:
-			
-			count = count + 1
-			sum = sum + int(num)
-		
-print('There are',count,'values with a sum =', sum)
+print('There are ',count,'values with the sum = ', sum)
